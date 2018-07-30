@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.springframework.org/security/tags">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+
+        <meta id="_csrf" name="_csrf" th:content="${_csrf.token}"/>
+        <meta id="_csrf_header" name="_csrf_header" th:content="${_csrf.headerName}"/>
+
+        <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">Migração de Email</title>
+
+        <link th:href="@{/webjars/bootstrap/4.1.1/css/bootstrap.min.css}" rel="stylesheet"/>
+
+        <link th:href="@{/layout/css/main.css}" rel="stylesheet"/>
+        <link th:href="@{/webjars/ionicons/2.0.1/css/ionicons.min.css}" rel="stylesheet"/>
+
+        <script th:src="@{/webjars/jquery/3.3.1-1/jquery.min.js}" defer="defer"></script>
+        <script th:src="@{/webjars/bootstrap/4.1.1/js/bootstrap.min.js}" defer="defer"></script>
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-dark bg-primary navbar-fixed-top shadow-sm">
+            <a class="navbar-brand" th:href="@{/}">Migração de Email</a>
+        </nav>
+        <div class="container">
+
+            <div class="starter-template">
+                <div class="alert alert-warning" th:if="${error} != null" th:text="${error}">
+                    Erro!
+                </div>
+                <div layout:fragment="content">
+                    <h1>Bootstrap starter template</h1>
+                    <p class="lead">Use this document as a way to quickly start
+                    any new project.<br> All you get is this text and a mostly
+                    barebones HTML document.</p>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

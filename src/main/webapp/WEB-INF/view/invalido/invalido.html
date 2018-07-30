@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.springframework.org/security/tags"
+      layout:decorate="~{layout/main}">
+<head>
+    <title>Inválido</title>
+    <link th:href="@{/layout/css/invalido/invalido.css}" rel="stylesheet"/>
+</head>
+<body>
+    <div layout:fragment="content">
+        <p>Desculpe, mas os emails da conta abaixo não são válidos para migração.</p>
+        <table>
+            <tr>
+                <th>Nome:</th>
+                <td th:text="${#authentication.principal.nome}"></td>
+            </tr>
+            <tr>
+                <th>Login:</th>
+                <td th:text="${#authentication.principal}"></td>
+            </tr>
+        </table>
+        <p>&nbsp;</p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Email</th>
+                    <th>Erro</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="emailMigracao : ${#authentication.principal.emails}">
+                    <td th:text="${emailMigracao.email}"></td>
+                    <td th:text="${emailMigracao.erro}"></td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&nbsp;</p>
+        <div>
+            <a class="btn btn-primary float-left" role="button" th:href="@{/logout}">Sair</a>
+        </div>
+    </div>
+</body>
+</html>

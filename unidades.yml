@@ -1,0 +1,34 @@
+## Bauru
+#bauru.unesp.br:
+#    comando:
+#        validar: bauru/validar_email.sh
+#        migrar: bauru/migrar.sh
+#        contato: bauru/contato.py
+#        forward: bauru/forward.sh
+#    email: email-bauru.eml
+#    servidor: zmx.bauru.unesp.br
+#faac.unesp.br:
+#    comando:
+#        validar: bauru/validar_email.sh
+#        migrar: bauru/migrar.sh
+#        contato: bauru/contato.py
+#        forward: bauru/forward.sh
+#    email: email-faac.eml
+#    servidor: zmx.bauru.unesp.br
+fc.unesp.br:
+    comando:
+        validar: bauru/validar_email.sh
+        migrar: bauru/migrar_teste.sh
+        contato: bauru/contato.py
+        forward: bauru/forward.sh
+    email: email-fc.eml
+    servidor: zmx.bauru.unesp.br
+#feb.unesp.br:
+#    comando:
+#        validar: bauru/validar_email.sh
+#        migrar: bauru/migrar.sh
+#        contato: bauru/contato.py
+#        forward: bauru/forward.sh
+#    email: email-bauru.eml
+#    servidor: zmx.bauru.unesp.br
+##

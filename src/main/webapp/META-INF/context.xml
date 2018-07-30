@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/MigracaoContasEmail">
+    <Parameter
+        name="usersDirs"
+        value="/home/demitrius/NetBeansProjects/MigracaoContasEmail/usuarios"/>
+    <Parameter
+        name="commandsDir"
+        value="/home/demitrius/NetBeansProjects/MigracaoContasEmail/comandos"/>
+    <Parameter
+        name="configDir"
+        value="/home/demitrius/NetBeansProjects/MigracaoContasEmail"/>
+    <Parameter
+        name="googleDataStoreDir"
+        value="/home/demitrius/NetBeansProjects/MigracaoContasEmail/googlestore"/>
+    <Parameter
+        name="notificationEmail"
+        value="/home/demitrius/NetBeansProjects/MigracaoContasEmail/notificacao-email.eml"/>
+</Context>

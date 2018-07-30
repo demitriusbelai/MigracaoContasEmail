@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.springframework.org/security/tags"
+      layout:decorate="~{layout/main}">
+<head>
+    <title>Início</title>
+    <link th:href="@{/layout/css/index.css}" rel="stylesheet"/>
+</head>
+<body>
+    <div layout:fragment="content">
+        <p>Bem vindo ao utilitário de migração de contas de email!</p>
+        <p>Este utilitário irá guiá-lo para migrar sua conta de email de Bauru
+        para a conta de email institucional da Unesp. Lembrando que essa migração
+        é irreversível.</p>
+        <p>A migração seguirá os seguintes passos:</p>
+        <ol>
+            <li>Será solicitado o login da central de acessos, caso não esteja
+            com uma sessão aberta, você deverá entrar com o usuário e senha</li>
+            <li>Será confirmado os dados da conta de email para migração, você
+            poderá selecionar o que deseja migrar (emails e/ou contatos) e
+            deverá validar o seu email entrando com sua senha</li>
+            <li>Será solicitado o acesso a sua conta G Suite da Unesp, você
+            deverá entrar na sua conta e autorizar esta aplicação</li>
+            <li>Após a confirmação dos dados, será iniciado o processo de
+            migração</li>
+        </ol>
+        <p>A partir de iniciada a migração, todos os email novos recebidos pela
+        conta de email da unidade já estarão sendo redirecionados para a conta
+        institucional. Como a migração dos emails poderá levar várias horas,
+        caso tenha escolhido copiar os emails, enviaremos um email para a nova
+        conta avisando do término da migração.</p>
+        <form th:action="@{/}" method="post">
+            <div class="form-check" th:class="${#fields.hasErrors('check')}? 'has-error form-check' : 'form-check'">
+              <input type="checkbox" class="form-check-input" name="check" id="check"/>
+              <label class="form-check-label" for="check">Li e concordo</label>
+              <div class="invalid-feedback" th:if="${#fields.hasErrors('check')}" th:errors="*{check}"></div>
+            </div>
+            <button type="submit" class="btn btn-primary float-right">Prosseguir</button>
+        </form>
+    </div>
+</body>
+</html>

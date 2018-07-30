@@ -1,0 +1,47 @@
+nav.navbar {
+    font-weight: bold;
+}
+
+@media (min-width: 400px) {
+    nav.navbar {
+        background-image: URL('../img/unesp-logo.svg');
+        background-repeat: no-repeat;
+        background-size: 122px 40px;
+        background-position: 16px 8px;
+        padding-left: 150px;
+    }
+}
+
+.shadow-sm {
+	box-shadow: 0 .125rem .25rem rgba(0,0,0,.2) !important;
+}
+
+.btn {
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.2) !important;
+}
+
+.starter-template {
+    padding: 30px 15px;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #007bff;
+    border-bottom: 16px solid #007bff;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    margin: auto;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

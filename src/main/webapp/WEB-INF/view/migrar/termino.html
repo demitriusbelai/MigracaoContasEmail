@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.springframework.org/security/tags"
+      layout:decorate="~{layout/main}">
+<head>
+    <title>Dados</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <p>O redirecionamento e os contatos, caso tenha sido selecionado, foi concluído.
+        Caso tenha optado por migrar os emails, isso levará algumas horas. Assim que
+        terminar será enviado um email na sua nova conta.</p>
+        <div>
+            <a class="btn btn-primary float-right" role="button" th:href="@{/logout}">Sair</a>
+        </div>
+    </div>
+</body>
+</html>

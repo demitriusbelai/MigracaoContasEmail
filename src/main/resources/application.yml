@@ -1,0 +1,28 @@
+security:
+    oauth2:
+        client:
+            clientId: fc.unesp.migracaoemail
+            clientSecret: g2EmnUhSYzF9qSnXQ5cppRnsmuQd3Xjf
+            accessTokenUri: https://auth.unesp.br/oauth/token
+            userAuthorizationUri: https://auth.unesp.br/oauth/authorize
+            tokenName: oauth_token
+            authenticationScheme: header
+            clientAuthenticationScheme: header
+        resource:
+            userInfoUri: https://auth.unesp.br/user
+spring:
+    thymeleaf:
+        prefix: /WEB-INF/view/
+        cache: false
+        mode: HTML5
+    datasource:
+        url: jdbc:postgresql://localhost:5432/migracao
+        username: migracao
+        password: migracao
+        driver-class-name: org.postgresql.Driver
+    mvc:
+        favicon:
+            enabled: false
+
+central:
+    service: https://sistemas.unesp.br/central-services

@@ -1,0 +1,8 @@
+fieldset > legend {
+    width: auto;
+    margin: 0 0.5rem;
+}
+
+fieldset {
+    padding: 0.5rem;
+}

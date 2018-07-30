@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.springframework.org/security/tags"
+      layout:decorate="~{layout/main}">
+<head>
+    <title>Dados</title>
+    <meta http-equiv="refresh" th:content="'0;url=' + @{/migrar/executar}"/>
+</head>
+<body>
+    <div layout:fragment="content" class="text-center">
+        <p class="h5">Preparando a migração. Por favor, aguarde.</p>
+        <p>&nbsp;</p>
+        <div class="loader"></div>
+    </div>
+</body>
+</html>

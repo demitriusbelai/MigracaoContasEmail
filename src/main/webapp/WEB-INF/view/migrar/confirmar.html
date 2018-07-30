@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.springframework.org/security/tags"
+      layout:decorate="~{layout/main}">
+<head>
+    <title>Dados</title>
+    <link th:href="@{/layout/css/migrar/confirmar.css}" rel="stylesheet"/>
+</head>
+<body>
+    <div layout:fragment="content">
+        <p>Confirme o que será migrado. Ao clicar em próximo você será redirecionado para fazer login na Google.</p>
+        <div class="form-group">
+            <label>Nome</label>
+            <input class="form-control" readonly="readonly" th:value="${#authentication.principal.nome}"/>
+        </div>
+        <div class="form-group">
+            <label>Email Unesp</label>
+            <input class="form-control" readonly="readonly" th:value="${#authentication.principal.emailUnesp}"/>
+        </div>
+        <fieldset class="border" th:each="emailMigracao,iterStat : ${#authentication.principal.emailsValidos}">
+            <legend th:text="${emailMigracao.email}"></legend>
+            <label class="form-check-label">
+                <span th:class="${emailMigracao.migrarEmails}? 'sim ion-checkmark-circled' : 'nao ion-close-circled'"></span> Emails
+            </label>
+            <br/>
+            <label class="form-check-label">
+                <span th:class="${emailMigracao.migrarContatos}? 'sim ion-checkmark-circled' : 'nao ion-close-circled'"></span> Contatos
+            </label>
+        </fieldset>
+        <p>&nbsp;</p>
+        <div>
+            <a class="btn btn-primary float-left" role="button" th:href="@{/migrar/dadoscentral}">Voltar</a>
+            <a class="btn btn-primary float-right" role="button" th:href="@{/google/login}">Próximo</a>
+        </div>
+    </div>
+</body>
+</html>
